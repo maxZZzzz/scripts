@@ -31,6 +31,7 @@ emerge app-misc/mc vim tmux bash-completion dhcpcd gentoolkit htop
 service net.eth0 restart
 
 echo 'set-option -g prefix C-a
+bind a send-prefix
 
 set-option -g mouse on
 
