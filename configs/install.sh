@@ -17,6 +17,8 @@ install_tmux() {
 install_vim() {
         rsync -vaAHD vim/ ~/
 
+        mkdir -p ~/.vim/bundle
+
         cd ~/.vim/bundle
         git clone git://github.com/altercation/vim-colors-solarized.git
         cd vim-colors-solarized
