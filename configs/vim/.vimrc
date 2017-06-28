@@ -7,3 +7,4 @@ set ttymouse=xterm2
 execute pathogen#infect()
 filetype plugin indent on
 colorscheme solarized
+
