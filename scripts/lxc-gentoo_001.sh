@@ -37,6 +37,7 @@ set-option -g mouse on
 
 # Active pane border colour
 set-option -g pane-active-border-fg yellow
+set -g default-terminal "screen-256color"
 ' > /root/.tmux.conf
 
 mkdir /root/bin
