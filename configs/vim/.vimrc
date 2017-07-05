@@ -4,6 +4,8 @@ set number
 set mouse=a
 set ttymouse=xterm2
 
+nnoremap <C-x> :buffers<CR>:buffer<Space>
+
 
 set nocompatible
 filetype off
@@ -16,6 +18,7 @@ Plugin 'Vundle/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-sensible.git'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
