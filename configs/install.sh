@@ -20,19 +20,7 @@ install_vim() {
         mkdir -p ~/.vim/bundle
 
         cd ~/.vim/bundle
-        git clone git://github.com/altercation/vim-colors-solarized.git
-        cd vim-colors-solarized
-        git pull
-
-        cd ..
-        git clone https://github.com/terryma/vim-multiple-cursors
-        cd vim-multiple-cursors
-        git pull
-
-        cd ..
-        git clone git://github.com/tpope/vim-sensible.git
-        cd vim-sensible
-        git pull
+        git clone https://github.com/VundleVim/Vundle.vim.git
 }
 
 install_tmux "$@"
