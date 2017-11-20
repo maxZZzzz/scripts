@@ -19,6 +19,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-sensible.git'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-scripts/Align'
 
 call vundle#end()
 
