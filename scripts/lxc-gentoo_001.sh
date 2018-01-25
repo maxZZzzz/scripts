@@ -93,6 +93,32 @@ configure_cron() {
     
     local content="$(cat /etc/crontab | sed -e 's/MAILTO=root/MAILTO=admin/')"
     echo "$content" > /etc/crontab
+    
+    useradd -ms /bin/bash admin
+    cat > /root/.muttrc << EOF
+# character set on sent messages
+set send_charset="utf-8"
+# if there is no character set given on incoming messages, it is probably windows
+set assumed_charset="iso-8859-1"
+
+# make sure Vim knows Mutt is a mail client and that a UTF-8 encoded message will be composed
+set editor="vim -c 'set syntax=mail ft=mail enc=utf-8'"
+# just scroll one line instead of full page
+set menu_scroll=yes
+
+# threading preferences, sort by threads
+set sort=threads
+set strict_threads=yes
+
+set mbox_type="Maildir"
+set folder="~/.maildir"
+set mbox="~/.maildir"
+set record="+.sent"
+set postponed="+.drafts"
+set spoolfile="~/.maildir"
+EOF
+    
+    install -o admin -g admin /root/.muttrc ~admin/.muttrc
 }
 
 configure_net
