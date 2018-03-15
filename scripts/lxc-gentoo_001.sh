@@ -5,7 +5,7 @@
 
 # script
 configure_net() {
-    cat > /etc/conf.d/net <<EOF
+    cat > /etc/conf.d/net <<'EOF'
 modules="dhcpcd"
 
 config_eth0="10.2.55.${HOST_NUMBER}
@@ -13,6 +13,8 @@ fd00::${HOST_NUMBER}/64"
 routes_eth0="10.2.0.0/16
 fd00::/64
 default via 10.2.0.1"
+dns_domain_eth0="local"
+dns_servers_eth0="10.2.0.1"
 EOF
 
     cd /etc/init.d
@@ -33,7 +35,7 @@ configure_profile() {
     eselect profile set default/linux/amd64/17.0
 
     mkdir /root/bin
-    cat > /root/bin/update-system.sh <<EOF
+    cat > /root/bin/update-system.sh <<'EOF'
 #!/bin/bash
 
 
@@ -63,7 +65,7 @@ configure_shell() {
     echo 'MAKEOPTS="-j4"' >> /etc/portage/make.conf
     emerge app-misc/mc vim tmux bash-completion gentoolkit htop dev-vcs/git netcat
     
-    cat >/root/.tmux.conf <<EOF
+    cat >/root/.tmux.conf <<'EOF'
 set-option -g prefix C-a
 bind a send-prefix
 
@@ -95,7 +97,7 @@ configure_cron() {
     echo "$content" > /etc/crontab
     
     useradd -ms /bin/bash admin
-    cat > /root/.muttrc << EOF
+    cat > /root/.muttrc <<'EOF'
 # character set on sent messages
 set send_charset="utf-8"
 # if there is no character set given on incoming messages, it is probably windows
