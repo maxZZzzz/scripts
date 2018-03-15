@@ -5,7 +5,7 @@
 
 # script
 configure_net() {
-    cat > /etc/conf.d/net <<'EOF'
+    cat > /etc/conf.d/net <<EOF
 modules="dhcpcd"
 
 config_eth0="10.2.55.${HOST_NUMBER}
